@@ -1,0 +1,275 @@
+/* ══════════════════════════════════════════
+   Notification Centre Styling
+   ══════════════════════════════════════════ */
+
+.notif-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background-color: #faf8ff;
+  min-height: calc(100vh - 100px);
+  font-family: var(--font-body);
+}
+
+.notif-page-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 50px rgba(125, 42, 232, 0.08) !important;
+  border: 1px solid rgba(125, 42, 232, 0.12) !important;
+  overflow: hidden !important;
+}
+
+/* Header */
+.notif-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #f5f0ff 0%, #ede9fe 100%);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.notif-page-bell-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(125, 42, 232, 0.1);
+}
+
+.notif-page-title {
+  font-family: var(--font-body) !important;
+  font-weight: 750 !important;
+  color: #1e1b4b !important;
+  font-size: 1.25rem !important;
+  letter-spacing: -0.3px;
+}
+
+.notif-page-subtitle {
+  font-family: var(--font-body) !important;
+  color: #7c3aed !important;
+  font-weight: 550 !important;
+  font-size: 0.825rem !important;
+}
+
+/* Controls */
+.notif-page-controls {
+  padding: 24px 28px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* List and Items */
+.notif-page-body {
+  padding-bottom: 24px !important;
+}
+
+.notif-page-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-page-item-wrap {
+  border-bottom: 1px solid rgba(125, 42, 232, 0.06);
+}
+
+.notif-page-item-wrap:last-child {
+  border-bottom: none;
+}
+
+.notif-page-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 28px !important;
+  transition: all 0.25s ease !important;
+}
+
+.notif-page-item:hover {
+  background-color: #f5f0ff !important;
+}
+
+.notif-item-left-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.notif-item-middle {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-item-title-text {
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  color: #1e1b4b !important;
+  font-size: 0.925rem !important;
+}
+
+.notif-item-desc-text {
+  font-family: var(--font-body) !important;
+  color: #64748b !important;
+  font-size: 0.825rem !important;
+  font-weight: 500 !important;
+  margin-top: 2px !important;
+  line-height: 1.4 !important;
+}
+
+.notif-item-time-text {
+  font-family: var(--font-body) !important;
+  color: #7d2ae8 !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  margin-top: 6px !important;
+}
+
+.notif-item-right-actions {
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.notif-page-item:hover .notif-item-right-actions {
+  opacity: 1;
+}
+
+/* Empty State */
+.notif-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.notif-empty-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f5f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(125, 42, 232, 0.08);
+}
+
+.notif-empty-title {
+  font-family: var(--font-body) !important;
+  font-weight: 750 !important;
+  color: #1e1b4b !important;
+  font-size: 1.15rem !important;
+  margin-bottom: 6px !important;
+}
+
+.notif-empty-desc {
+  font-family: var(--font-body) !important;
+  color: #94a3b8 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  max-width: 320px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .notif-page-header {
+    padding: 20px;
+  }
+  .notif-page-controls {
+    padding: 20px 20px 10px;
+  }
+  .notif-page-item {
+    padding: 16px 20px !important;
+    gap: 12px;
+  }
+  .notif-item-right-actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+/* ── Dark Mode Overrides ────────────────── */
+.dark-theme.notif-page-container,
+.dark .notif-page-container {
+  background-color: var(--color-bg-primary);
+}
+
+.dark-theme .notif-page-card,
+.dark .notif-page-card {
+  background: var(--color-bg-sidebar) !important;
+  border-color: var(--color-border-hr) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-theme .notif-page-header,
+.dark .notif-page-header {
+  background: linear-gradient(135deg, rgba(125, 42, 232, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+}
+
+.dark-theme .notif-page-bell-icon,
+.dark .notif-page-bell-icon {
+  background: var(--color-bg-secondary);
+  box-shadow: none;
+}
+
+.dark-theme .notif-page-title,
+.dark .notif-page-title {
+  color: var(--color-text-primary) !important;
+}
+
+.dark-theme .notif-page-subtitle,
+.dark .notif-page-subtitle {
+  color: var(--color-primary-light) !important;
+}
+
+.dark-theme .notif-page-item-wrap,
+.dark .notif-page-item-wrap {
+  border-color: var(--color-border-hr);
+}
+
+.dark-theme .notif-page-item:hover,
+.dark .notif-page-item:hover {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.dark-theme .notif-item-title-text,
+.dark .notif-item-title-text {
+  color: var(--color-text-primary) !important;
+}
+
+.dark-theme .notif-item-desc-text,
+.dark .notif-item-desc-text {
+  color: var(--color-text-secondary) !important;
+}
+
+.dark-theme .notif-item-time-text,
+.dark .notif-item-time-text {
+  color: var(--color-primary-light) !important;
+}
+
+.dark-theme .notif-empty-circle,
+.dark .notif-empty-circle {
+  background: var(--color-bg-secondary);
+  box-shadow: none;
+}
+
+.dark-theme .notif-empty-title,
+.dark .notif-empty-title {
+  color: var(--color-text-primary) !important;
+}
+

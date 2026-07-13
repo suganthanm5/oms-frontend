@@ -1,0 +1,87 @@
+/* Importing Google Fonts - Space Grotesk (Headers) & Manrope (Content) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ══════════════════════════════════════════
+   Design Tokens - Light Theme (default)
+══════════════════════════════════════════ */
+:root {
+  --sidebar-width: 270px;
+  --sidebar-collapsed-width: 90px;
+  --navbar-height: 72px;
+  --primary-color: #695CFE;
+
+  /* Typography */
+  --font-header: 'Space Grotesk', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Sidebar / theme colors */
+  --color-text-primary: #1F2936;
+  --color-text-placeholder: #798EAE;
+  --color-bg-primary: #f9fafb;
+  --color-bg-secondary: #ECECFD;
+  --color-bg-sidebar: #FFFFFF;
+  --color-border-hr: #E2E8F0;
+  --color-hover-primary: #695CFE;
+  --color-hover-secondary: #e2e2fb;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg-primary);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease;
+}
+
+/* Global Font Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.db-page-title,
+.prod-hero-title,
+.user-dialog-title,
+.transfer-dialog-title,
+.order-detail-header,
+.stat-card-value,
+.db-stat-value,
+.prod-stat-value,
+.db-card-title,
+.prod-card-name,
+.prod-td-name {
+  font-family: var(--font-header) !important;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

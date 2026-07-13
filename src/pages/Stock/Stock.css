@@ -1,0 +1,86 @@
+/* ══════════════════════════════════════════
+   Stock Management Page CSS
+══════════════════════════════════════════ */
+.stock-page {
+  font-family: var(--font-body);
+  padding: 8px 0;
+}
+
+/* Stock level indicator */
+.stock-level {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stock-level-bar {
+  height: 6px;
+  border-radius: 99px;
+  background: #f0ebff;
+  overflow: hidden;
+  width: 100px;
+}
+
+.stock-level-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.stock-level-fill.high {
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+}
+
+.stock-level-fill.medium {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+.stock-level-fill.low {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+}
+
+.stock-level-text {
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.stock-level-text.high {
+  color: #16a34a;
+}
+
+.stock-level-text.medium {
+  color: #ca8a04;
+}
+
+.stock-level-text.low {
+  color: #ef4444;
+}
+
+/* Transfer dialog */
+.transfer-dialog-title {
+  background: linear-gradient(135deg, #7d2ae8, #a855f7);
+  color: #fff;
+  padding: 16px 20px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.transfer-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7d2ae8, #a855f7);
+  color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(125, 42, 232, 0.35);
+}
+
+/* ── Dark Mode Overrides ────────────────── */
+.dark-theme .stock-level-bar,
+.dark .stock-level-bar {
+  background: var(--color-bg-secondary);
+}
