@@ -1018,7 +1018,7 @@ export default function Outlet() {
 
         {/* ─── Table View ─── */}
         {view === "table" && (
-          <Paper elevation={0} sx={{ borderRadius: "16px", border: "1.5px solid #e8eaf6", overflow: "hidden", mb: 2 }}>
+          <TableContainer component={Paper} elevation={0} sx={{ borderRadius: "16px", border: "1.5px solid #e8eaf6", mb: 2, overflowX: "auto" }}>
             <Table size="small" sx={{ minWidth: 800 }}>
               <TableHead>
                 <TableRow>
@@ -1187,7 +1187,7 @@ export default function Outlet() {
                 )}
               </TableBody>
             </Table>
-          </Paper>
+          </TableContainer>
         )}
 
         {/* ─── Card View ─── */}
