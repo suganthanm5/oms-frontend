@@ -112,9 +112,10 @@ const Orders = () => {
       };
       if (filters.outletId) activeFilters.outletId = filters.outletId;
       if (search) activeFilters.orderNo = search;
+      if (filters.status) activeFilters.status = filters.status;
 
       const oData = await orderService.getAll(activeFilters, signal);
-      if (oData && oData.content) {
+      if (oData && Array.isArray(oData.content)) {
         setOrders(oData.content);
         setTotalPages(oData.totalPages || 1);
         setTotalElements(oData.totalElements || 0);

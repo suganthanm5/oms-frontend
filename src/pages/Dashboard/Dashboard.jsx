@@ -238,32 +238,34 @@ function AdminDashboard({ summary, outlets, divisions, transactions, navigate, f
           action={<Button variant="text" color="primary" onClick={() => navigate("/outlet")} sx={{ textTransform: "none", fontWeight: 700 }}>View All →</Button>}
           delay={320}
         >
-          <table className="db-table">
-            <thead>
-              <tr>
-                <th>Outlet Name</th>
-                <th>Division</th>
-                <th>Location</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {recentOutlets.length === 0 ? (
-                <tr><td colSpan={4} className="db-empty">No outlets registered yet</td></tr>
-              ) : recentOutlets.map((o, i) => (
-                <tr key={i}>
-                  <td><strong>{o.outletName}</strong></td>
-                  <td>
-                    {o.divisionNames?.length > 0
-                      ? o.divisionNames.join(", ")
-                      : (o.division?.name || o.divisionName || "—")}
-                  </td>
-                  <td>{o.locationName || o.location?.name || "—"}</td>
-                  <td><span className="db-badge green">Active</span></td>
+          <div className="db-table-container">
+            <table className="db-table">
+              <thead>
+                <tr>
+                  <th>Outlet Name</th>
+                  <th>Division</th>
+                  <th>Location</th>
+                  <th>Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {recentOutlets.length === 0 ? (
+                  <tr><td colSpan={4} className="db-empty">No outlets registered yet</td></tr>
+                ) : recentOutlets.map((o, i) => (
+                  <tr key={i}>
+                    <td><strong>{o.outletName}</strong></td>
+                    <td>
+                      {o.divisionNames?.length > 0
+                        ? o.divisionNames.join(", ")
+                        : (o.division?.name || o.divisionName || "—")}
+                    </td>
+                    <td>{o.locationName || o.location?.name || "—"}</td>
+                    <td><span className="db-badge green">Active</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </SectionCard>
 
         <SectionCard title="Order Insights" subtitle="Current status breakdown" delay={380}>
@@ -435,30 +437,32 @@ function ManagerDashboard({ summary, outlets, transactions, navigate, filters })
           action={<Button variant="text" color="primary" onClick={() => navigate("/outlet")} sx={{ textTransform: "none", fontWeight: 700 }}>View All →</Button>}
           delay={360}
         >
-          <table className="db-table">
-            <thead>
-              <tr>
-                <th>Outlet Name</th>
-                <th>Division</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {recentOutlets.length === 0 ? (
-                <tr><td colSpan={3} className="db-empty">No outlets found</td></tr>
-              ) : recentOutlets.map((o, i) => (
-                <tr key={i}>
-                  <td><strong>{o.outletName}</strong></td>
-                  <td>
-                    {o.divisionNames?.length > 0
-                      ? o.divisionNames.join(", ")
-                      : (o.division?.name || o.divisionName || "—")}
-                  </td>
-                  <td><span className="db-badge green">Active</span></td>
+          <div className="db-table-container">
+            <table className="db-table">
+              <thead>
+                <tr>
+                  <th>Outlet Name</th>
+                  <th>Division</th>
+                  <th>Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {recentOutlets.length === 0 ? (
+                  <tr><td colSpan={3} className="db-empty">No outlets found</td></tr>
+                ) : recentOutlets.map((o, i) => (
+                  <tr key={i}>
+                    <td><strong>{o.outletName}</strong></td>
+                    <td>
+                      {o.divisionNames?.length > 0
+                        ? o.divisionNames.join(", ")
+                        : (o.division?.name || o.divisionName || "—")}
+                    </td>
+                    <td><span className="db-badge green">Active</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </SectionCard>
 
         <SectionCard title="Recent Activity" subtitle="Latest transactions" delay={420}>
@@ -572,35 +576,37 @@ function UserDashboard({ summary, transactions, navigate, filters }) {
       </div>
 
       <SectionCard title="Recent Orders" subtitle="Your latest order activity" delay={340}>
-        <table className="db-table">
-          <thead>
-            <tr>
-              <th>Order No</th>
-              <th>Status</th>
-              <th>Items</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transactions.length === 0 ? (
-              <tr><td colSpan={4} className="db-empty">No recent orders found</td></tr>
-            ) : transactions.slice(0, 8).map((ord, i) => (
-              <tr key={i}>
-                <td><strong>{ord.orderNo || "—"}</strong></td>
-                <td>
-                  <span className={`db-badge ${ord.status === "APPROVED" || ord.status === "COMPLETED" ? "green"
-                    : ord.status === "REJECTED" || ord.status === "CANCELLED" ? "rose"
-                      : "orange"
-                    }`}>
-                    {ord.status || "—"}
-                  </span>
-                </td>
-                <td>{ord.items?.length || 0}</td>
-                <td>{ord.requestDate ? new Date(ord.requestDate).toLocaleDateString() : "—"}</td>
+        <div className="db-table-container">
+          <table className="db-table">
+            <thead>
+              <tr>
+                <th>Order No</th>
+                <th>Status</th>
+                <th>Items</th>
+                <th>Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {transactions.length === 0 ? (
+                <tr><td colSpan={4} className="db-empty">No recent orders found</td></tr>
+              ) : transactions.slice(0, 8).map((ord, i) => (
+                <tr key={i}>
+                  <td><strong>{ord.orderNo || "—"}</strong></td>
+                  <td>
+                    <span className={`db-badge ${ord.status === "APPROVED" || ord.status === "COMPLETED" ? "green"
+                      : ord.status === "REJECTED" || ord.status === "CANCELLED" ? "rose"
+                        : "orange"
+                      }`}>
+                      {ord.status || "—"}
+                    </span>
+                  </td>
+                  <td>{ord.items?.length || 0}</td>
+                  <td>{ord.requestDate ? new Date(ord.requestDate).toLocaleDateString() : "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </SectionCard>
     </>
   );

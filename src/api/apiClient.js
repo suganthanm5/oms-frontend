@@ -3,7 +3,7 @@ import { setupInterceptors } from './interceptors';
 
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || window.location.origin,
-  timeout: 10000,
+  timeout: 30000,
 });
 
 setupInterceptors(API);

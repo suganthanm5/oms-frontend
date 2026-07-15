@@ -1558,3 +1558,51 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ── Responsive Overrides ────────────────── */
+@media (max-width: 1200px) {
+  .db-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .db-stats-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .db-grid-2-1, .db-grid-3-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .db-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .db-stats-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .db-distribution-split {
+    flex-direction: column;
+  }
+  .db-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .db-table-container {
+    overflow-x: auto;
+  }
+  .db-table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .db-stats-grid, .db-stats-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .db-quick-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .db-order-insights-list {
+    grid-template-columns: 1fr;
+  }
+}

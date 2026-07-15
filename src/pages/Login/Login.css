@@ -51,7 +51,8 @@
   backdrop-filter: blur(20px);
   padding: 45px 40px;
   border-radius: 20px;
-  width: 440px;
+  width: 90%;
+  max-width: 440px;
   text-align: center;
   transition: all 0.3s ease;
 
@@ -337,5 +338,16 @@
 
   100% {
     left: 115%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .left-content {
+    display: none; /* Hide marketing text on small screens */
+  }
+  
+  .login-box {
+    padding: 30px 20px;
   }
 }

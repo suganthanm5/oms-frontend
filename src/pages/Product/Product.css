@@ -1405,3 +1405,31 @@
 .dark-theme .prod-table tr:hover {
   background: var(--color-bg-secondary) !important;
 }
+
+/* ── Responsive Overrides ────────────────── */
+@media (max-width: 900px) {
+  .prod-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .prod-stats {
+    grid-template-columns: 1fr;
+  }
+  .prod-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .prod-toolbar-filters, .prod-toolbar-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .prod-search-wrap {
+    max-width: 100%;
+  }
+  .prod-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

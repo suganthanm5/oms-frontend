@@ -14,8 +14,8 @@ export const orderService = {
   },
 
   /** Get order counts */
-  getCounts: async (params = {}) => {
-    const res = await apiClient.get('/api/orders/counts', { params });
+  getCounts: async (params = {}, signal) => {
+    const res = await apiClient.get('/api/orders/counts', { params, signal });
     return res.data?.data || {};
   },
 
