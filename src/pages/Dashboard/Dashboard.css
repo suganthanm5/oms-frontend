@@ -1222,6 +1222,20 @@
     padding-right: 18px;
   }
 
+  .db-filters-inline {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .db-select-pill {
+    width: 100%;
+  }
+
+  .db-select-field-sm {
+    width: 100%;
+  }
+
   .db-bg-orb {
     display: none;
   }
