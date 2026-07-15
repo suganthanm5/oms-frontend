@@ -84,6 +84,16 @@ export const getTheme = () => {
           html {
             font-size: ${htmlFontSize}px !important;
           }
+          @media (max-width: 768px) {
+            html {
+              font-size: ${htmlFontSize - 1.5}px !important;
+            }
+          }
+          @media (max-width: 480px) {
+            html {
+              font-size: ${htmlFontSize - 2.5}px !important;
+            }
+          }
           body {
             background-color: ${isDark ? "#0f172a" : "#f8fafc"};
             -webkit-font-smoothing: antialiased;
@@ -151,6 +161,10 @@ export const getTheme = () => {
             "&:hover": {
               transform: "translateY(-1.5px)",
             },
+            "@media (max-width: 600px)": {
+              padding: "8px 12px",
+              fontSize: "0.75rem",
+            }
           },
           contained: {
             color: "#ffffff",
@@ -261,7 +275,13 @@ export const getTheme = () => {
         styleOverrides: {
           paper: {
             borderRadius: compactMode ? 12 : 20,
-            minWidth: 520,
+            minWidth: 300,
+            margin: 16,
+            width: "calc(100% - 32px)",
+            "@media (min-width: 600px)": {
+              minWidth: 520,
+              width: "auto",
+            }
           }
         }
       },

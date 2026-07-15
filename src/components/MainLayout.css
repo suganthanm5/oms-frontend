@@ -27,6 +27,9 @@
   padding: 0.5rem 1rem 1rem 1rem;
   background-color: var(--color-bg-primary);
   overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   transition: background-color 0.3s ease;
 }
 
@@ -40,6 +43,8 @@
 
   .main-content {
     margin-left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
   }
 }
 

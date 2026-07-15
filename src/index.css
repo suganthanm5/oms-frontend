@@ -112,4 +112,27 @@ html {
   .hidden-mobile {
     display: none !important;
   }
+
+  /* Responsive Typography & Spacing for Custom Classes */
+  .db-page-title, .page-title, .prod-hero-title {
+    font-size: 1.25rem !important;
+  }
+  .db-card-title, .prod-card-name {
+    font-size: 1rem !important;
+  }
+  .db-stat-value, .stat-card-value, .prod-stat-value {
+    font-size: 1.15rem !important;
+  }
+  .db-page-sub, .db-card-subtitle {
+    font-size: 0.8rem !important;
+  }
+  .db-card, .prod-card {
+    padding: 10px !important;
+  }
+  .db-card-header {
+    padding: 10px !important;
+  }
+  .db-card-body {
+    padding: 10px !important;
+  }
 }

@@ -59,7 +59,10 @@
 
 /* ── Left — Page Title ── */
 .navbar-left {
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .nb-page {
@@ -609,7 +612,12 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 16px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .navbar-right {
+    gap: 6px;
   }
 
   .navbar-center {
@@ -626,6 +634,15 @@
 
   .user-info {
     display: none;
+  }
+
+  .user-chevron {
+    display: none;
+  }
+
+  .navbar-user {
+    padding: 2px; /* Just enough for avatar */
+    border-radius: 50%;
   }
 
   .notif-dropdown, .user-dropdown {
