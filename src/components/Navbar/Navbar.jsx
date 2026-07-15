@@ -46,7 +46,7 @@ import "./Navbar.css";
 // Dynamic notifications list fetched from dashboard summary metrics
 
 /* ── Component ───────────────────────────────────── */
-const Navbar = ({ title = "Dashboard" }) => {
+const Navbar = ({ title = "Dashboard", setCollapsed }) => {
   const navigate = useNavigate();
   const searchRef = useRef(null);
 
@@ -352,21 +352,30 @@ const Navbar = ({ title = "Dashboard" }) => {
       <Box component="header" className="navbar">
 
         {/* LEFT — Greeting or Page Title */}
-        <Box className="navbar-left" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          {title === 'Dashboard' || title === 'Dashboard ' ? (
-            <>
-              <Typography sx={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--color-text-primary)', lineHeight: 1.2, minHeight: '1.5rem' }}>
-                <TypingText text={`Hi, ${user.name || "User"}`} delay={40} startDelay={100} />
+        <Box className="navbar-left" sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 1 }}>
+          <IconButton
+            className="mobile-nav-toggle-navbar"
+            onClick={() => setCollapsed && setCollapsed((prev) => !prev)}
+            sx={{ display: { xs: 'flex', md: 'none' }, color: 'var(--color-text-primary)', p: 0.5 }}
+          >
+            <MenuRounded sx={{ fontSize: '1.75rem' }} />
+          </IconButton>
+          <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            {title === 'Dashboard' || title === 'Dashboard ' ? (
+              <>
+                <Typography sx={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--color-text-primary)', lineHeight: 1.2, minHeight: '1.5rem' }}>
+                  <TypingText text={`Hi, ${user.name || "User"}`} delay={40} startDelay={100} />
+                </Typography>
+                <Typography sx={{ fontSize: '0.9rem', color: '#8b5cf6', fontWeight: 500, mt: 0.3, minHeight: '1.35rem' }}>
+                  <TypingText text="Let's finish your task today!" delay={30} startDelay={700} />
+                </Typography>
+              </>
+            ) : (
+              <Typography className="nb-page" sx={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>
+                {title}
               </Typography>
-              <Typography sx={{ fontSize: '0.9rem', color: '#8b5cf6', fontWeight: 500, mt: 0.3, minHeight: '1.35rem' }}>
-                <TypingText text="Let's finish your task today!" delay={30} startDelay={700} />
-              </Typography>
-            </>
-          ) : (
-            <Typography className="nb-page" sx={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>
-              {title}
-            </Typography>
-          )}
+            )}
+          </Box>
         </Box>
 
         {/* CENTER — Empty space to push right elements */}
