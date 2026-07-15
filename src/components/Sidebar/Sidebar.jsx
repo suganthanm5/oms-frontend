@@ -97,7 +97,8 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
         window.innerWidth <= 768 &&
         !collapsed &&
         !e.target.closest(".new-sidebar") &&
-        !e.target.closest(".mobile-nav-toggle")
+        !e.target.closest(".mobile-nav-toggle") &&
+        !e.target.closest(".mobile-nav-toggle-navbar")
       ) {
         setCollapsed(true);
         document.body.classList.remove("sidebar-open");
