@@ -98,6 +98,35 @@
   background: color-mix(in srgb, var(--theme-accent, #4f46e5) 8%, transparent) !important;
 }
 
+@media (max-width: 768px) {
+  .settings-sidebar {
+    padding: 0;
+  }
+  .settings-tabs .MuiTabs-flexContainer {
+    flex-direction: row !important;
+    overflow-x: auto;
+    padding: 12px 16px;
+    gap: 8px;
+    /* Hide scrollbar */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .settings-tabs .MuiTabs-flexContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .settings-tab {
+    white-space: nowrap;
+    border-left: none !important;
+    border-bottom: 3px solid transparent !important;
+    min-height: 36px !important;
+    padding: 8px 16px !important;
+  }
+  .settings-tab.active {
+    border-left: none !important;
+    border-bottom: 3px solid var(--theme-accent, #4f46e5) !important;
+  }
+}
+
 /* Main Panel */
 .settings-panel {
   flex: 1;
