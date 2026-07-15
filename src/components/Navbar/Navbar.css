@@ -646,11 +646,11 @@
   }
 
   .notif-dropdown, .user-dropdown {
-    position: fixed;
-    top: 72px; /* right below navbar */
-    right: 16px;
-    left: 16px;
-    width: auto;
+    position: absolute;
+    top: 54px;
+    right: -10px;
+    left: auto;
+    width: calc(100vw - 32px);
     max-width: calc(100vw - 32px);
   }
 }

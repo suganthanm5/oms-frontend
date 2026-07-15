@@ -722,7 +722,7 @@
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 10;
+    z-index: 250;
     opacity: 1;
     pointer-events: auto;
     background: rgba(0, 0, 0, 0.5);
@@ -742,7 +742,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    z-index: 20;
+    z-index: 300;
     width: var(--sidebar-width) !important;
     transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     background: var(--color-bg-sidebar);
