@@ -31,6 +31,7 @@ import {
   WarningAmberRounded,
   LightModeRounded,
   DarkModeRounded,
+  MenuRounded,
 } from "@mui/icons-material";
 import ModernProfileDrawer from "../ProfileDrawer/ModernProfileDrawer";
 import TypingText from "../TypingText";
